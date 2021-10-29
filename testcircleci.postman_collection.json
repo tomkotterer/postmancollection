@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "9f646aca-790a-4e1f-8456-8c24e2a81f50",
+		"name": "testcircleci",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Show areas Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{ls_api_key}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1.2/{{restaurantUid}}/areas",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1.2",
+						"{{restaurantUid}}",
+						"areas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show all restaurants Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{ls_api_key}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "apikey",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/v1.2/restaurants",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"v1.2",
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
